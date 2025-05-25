@@ -18,7 +18,10 @@ from langchain_community.vectorstores import Chroma
 from chromadb import Client
 from chromadb.config import Settings
 
-client = Client(Settings(chroma_db_impl="duckdb+parquet"))
+client = Client(Settings(
+    chroma_db_impl="duckdb+parquet",
+    persist_directory=".chromadb"  # Change to a folder of your choice
+))
 from langchain_core.runnables import RunnablePassthrough
 from langchain_google_genai import ChatGoogleGenerativeAI
 import warnings
@@ -77,6 +80,11 @@ documents = TextLoader("faq.txt").load()
 text_splitter = CharacterTextSplitter(chunk_size=100, chunk_overlap=0, separator="\n")
 splits = text_splitter.split_documents(documents)
 embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001",google_api_key=GOOGLE_API_KEY)
+vectorstore = Chroma(
+    embedding_function=embedding_fn,
+    client=chroma_client,
+    collection_name="my_collection"
+)
 db = Chroma.from_documents(documents,embeddings)
 retriever = db.as_retriever()
 
