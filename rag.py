@@ -19,7 +19,7 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_google_genai import ChatGoogleGenerativeAI
 import warnings
 warnings.filterwarnings("ignore")
-import google.generativeai as genai
+
 import os
 
 
