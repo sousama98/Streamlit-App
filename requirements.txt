@@ -1,0 +1,10 @@
+langchain
+langchain-community
+langchain-core
+python-dotenv
+colorama
+langchain_groq 
+ChatGroq
+langchain-text-splitters
+chromadb
+tiktoken
