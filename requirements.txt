@@ -6,3 +6,8 @@ colorama
 langchain-text-splitters
 chromadb
 tiktoken
+streamlit
+streamlit
+streamlit-chat
+langchain_google_genai
+
