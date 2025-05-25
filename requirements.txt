@@ -4,7 +4,7 @@ langchain-core
 python-dotenv
 colorama
 langchain-text-splitters
-chromadb
+chromadb>=0.4.0
 tiktoken
 streamlit
 streamlit
