@@ -15,14 +15,6 @@ from langchain_core.messages import HumanMessage
 from langchain.chains import create_history_aware_retriever
 from langchain_core.prompts import (MessagesPlaceholder)
 from langchain.schema import StrOutputParser
-from langchain_community.vectorstores import Chroma
-from chromadb import Client
-from chromadb.config import Settings
-
-client = Client(Settings(
-    chroma_db_impl="duckdb+parquet",
-    persist_directory=".chromadb"  # Change to a folder of your choice
-))
 from langchain_core.runnables import RunnablePassthrough
 from langchain_google_genai import ChatGoogleGenerativeAI
 import warnings
