@@ -10,4 +10,5 @@ streamlit
 streamlit
 streamlit-chat
 langchain_google_genai
+faiss-cpu
 
