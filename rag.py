@@ -85,7 +85,12 @@ vectorstore = Chroma(
     client=chroma_client,
     collection_name="my_collection"
 )
-db = Chroma.from_documents(documents,embeddings)
+db = Chroma.from_documents(
+    documents,
+    embedding=embeddings,
+    collection_name="faq_collection",
+    client=chroma_client
+)
 retriever = db.as_retriever()
 
 # Retrieve chat history
